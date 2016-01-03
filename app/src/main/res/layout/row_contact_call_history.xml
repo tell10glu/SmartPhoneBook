@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeightLarge">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/row_contact_call_history_call_image_button"
+        android:layout_toStartOf="@+id/row_contact_call_history_call_image_button">
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:paddingLeft="20dip"
+            android:paddingTop="20dip"
+            android:id="@+id/row_contact_call_history_name_number"
+            android:text="NUMARA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginLeft="20dip"
+                android:id="@+id/row_contact_call_history_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/row_contact_call_history_date"
+                android:textSize="20sp"
+                android:text="TARIH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <ImageButton
+        android:layout_marginRight="10dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/viber_call"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/row_contact_call_history_call_image_button" />
+</RelativeLayout   >

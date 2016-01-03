@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <View
+        android:background="@color/tab_color"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"></View>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+
+    </View>
+        <LinearLayout
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <Button
+                android:textColor="@android:color/white"
+                android:paddingTop="@dimen/tab_menu_top_padding"
+                android:background="@drawable/tab_menu"
+                android:text="@string/call"
+                android:id="@+id/activity_main_tab_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="@dimen/tab_menu_left_margin"
+                android:background="@drawable/tab_menu"
+                android:text="@string/contact_list"
+                android:paddingTop="@dimen/tab_menu_top_padding"
+                android:id="@+id/activity_main_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="@dimen/tab_menu_left_margin"
+                android:paddingTop="@dimen/tab_menu_top_padding"
+                android:background="@drawable/tab_menu"
+                android:text="@string/call_history"
+                android:id="@+id/activity_main_contact_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="@dimen/tab_menu_left_margin"
+                android:paddingTop="@dimen/tab_menu_top_padding"
+                android:background="@drawable/tab_menu"
+                android:text="@string/message"
+                android:id="@+id/activity_main_contact_messages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/main_activity_fragment_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+</LinearLayout>

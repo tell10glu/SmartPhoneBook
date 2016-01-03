@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="HINT"
+            android:id="@+id/fragment_call_number_hint"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/call_phone_number_container"
+            android:gravity="center"
+
+            android:textIsSelectable="true"
+            android:layout_weight="2"
+            android:id="@+id/fragment_call_number_area_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_1"
+                android:layout_weight="1"
+                android:text="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_2"
+                android:layout_weight="1"
+                android:text="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_3"
+                android:layout_weight="1"
+                android:text="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_4"
+                android:layout_weight="1"
+                android:text="4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_5"
+                android:layout_weight="1"
+                android:text="5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_6"
+                android:layout_weight="1"
+                android:text="6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_7"
+                android:layout_weight="1"
+                android:text="7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_8"
+                android:layout_weight="1"
+                android:text="8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_9"
+                android:layout_weight="1"
+                android:text="9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_star"
+                android:layout_weight="1"
+                android:text="*"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_0"
+                android:layout_weight="1"
+                android:text="0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="@dimen/call_button_text_size"
+                android:background="@drawable/call_button"
+                android:gravity="center"
+                android:id="@+id/fragment_call_number_dies"
+                android:layout_weight="1"
+                android:text="#"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="@android:color/holo_green_dark"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+            <LinearLayout
+                android:orientation="horizontal"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:background="@drawable/call_button"
+                    android:id="@+id/fragment_call_sms_button"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <Button
+                    android:background="@drawable/call_button"
+                    android:id="@+id/fragment_call_call_number"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <Button
+                    android:background="@drawable/call_button"
+                    android:id="@+id/fragment_call_remove_number"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

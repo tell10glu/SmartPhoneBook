@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.tll.smartphonebook.R;
 import com.tll.smartphonebook.SmartPhoneApplication;
+import com.tll.smartphonebook.dialogs.MessageDialog;
 import com.tll.smartphonebook.helpers.PhoneUtils;
 import com.tll.smartphonebook.models.Contact;
 
@@ -29,7 +30,7 @@ public class CallFragment extends Fragment implements View.OnClickListener {
     private Contact hintContact;
     private TextView phoneNumberTextView,phoneNumberHint;
     private Button btnCall1,btnCall2,btnCall3,btnCall4,btnCall5,btnCall6,btnCall7,btnCall8,btnCall9,btnCallstar,btnCall0,btnCallD;
-    private Button btnCallNumber,btnCallRemoveNumber;
+    private Button btnCallNumber,btnCallRemoveNumber,btnSms;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class CallFragment extends Fragment implements View.OnClickListener {
         btnCallNumber = (Button)v.findViewById(R.id.fragment_call_call_number);
         btnCallstar = (Button)v.findViewById(R.id.fragment_call_number_star);
         btnCallD = (Button)v.findViewById(R.id.fragment_call_number_dies);
+        btnSms = (Button)v.findViewById(R.id.fragment_call_sms_button);
         btnCallRemoveNumber = (Button)v.findViewById(R.id.fragment_call_remove_number);
         phoneNumberTextView = (TextView)v.findViewById(R.id.fragment_call_number_area_text_view);
         phoneNumberHint = (TextView)v.findViewById(R.id.fragment_call_number_hint);
@@ -63,6 +65,13 @@ public class CallFragment extends Fragment implements View.OnClickListener {
         btnCall0.setOnClickListener(this);
         btnCallstar.setOnClickListener(this);
         btnCallD.setOnClickListener(this);
+        btnSms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MessageDialog dial = new MessageDialog(getActivity(),numberToCall);
+                dial.show();
+            }
+        });
         btnCallRemoveNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

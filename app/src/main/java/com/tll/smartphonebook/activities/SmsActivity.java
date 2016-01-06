@@ -1,10 +1,11 @@
-package com.tll.smartphonebook;
+package com.tll.smartphonebook.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.tll.smartphonebook.R;
 import com.tll.smartphonebook.constants.BaseConstants;
 import com.tll.smartphonebook.database.DatabaseHelper;
 import com.tll.smartphonebook.models.Message;

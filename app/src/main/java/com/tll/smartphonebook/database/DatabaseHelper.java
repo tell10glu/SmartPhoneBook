@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String MESSAGE_FROM = "from";
     private static final String MESSAGE_TO = "to";
     private static final String MESSAGE_BODY = "body";
-    private static final String MESSAGE_DATE = "date";
+    private static final String MESSAGE_DATE = "DATE";
 
     private static final String CREATE_TABLE_CONTACT = "Create table if not exists "+TABLE_CONTACT+"" +
             "("+CONTACT_ID+" Integer PRIMARY KEY ," +
@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ""+CONTACT_HISTORY_DATE+" text ,"+
             ""+CONTACT_HISTORY_IS_ISMISSING+" integer )";
     private static final String CREATE_TABLE_MESSAGES = " Create table if not exists "+TABLE_MESSAGE +
-            "( "+MESSAGE_ID+" integer PRIMARY KEY ,"+
+            "( "+MESSAGE_ID+" Integer PRIMARY KEY ,"+
             ""+MESSAGE_FROM+" text ,"+
             ""+MESSAGE_TO+" text ,"+
             ""+MESSAGE_DATE+" text ,"+
@@ -129,7 +129,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Contact getContact(String number){
         Contact contact =null;
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "Select * from Contacts where "+CONTACT_MOBILENUMBER+" = "+number;
+        String query = "Select * from Contacts where  TRIM("+CONTACT_MOBILENUMBER+") = '"+number.trim()+"'";
         Cursor cursor = db.rawQuery(query,null);
         if(cursor.moveToNext()){
             contact  =new Contact(

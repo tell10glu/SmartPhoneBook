@@ -45,9 +45,13 @@ public class SmartPhoneApplication extends Application {
         }
         return contactList;
     }
+    public void updateContact(Contact contact) throws DialogException{
+
+    }
     public void addContact(Contact contact) throws DialogException{
         databaseHelper.addContact(contact);
         this.contactList.add(contact);
         Collections.sort(this.contactList,new ContactComparator());
     }
+
 }

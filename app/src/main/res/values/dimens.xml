@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="call_button_text_size">20dp</dimen>
-    <dimen name="call_phone_number_container">32dp</dimen>
+    <dimen name="call_phone_number_container">40dp</dimen>
     <dimen name="contact_name">30sp</dimen>
     <dimen name="contact_number">20sp</dimen>
     <dimen name="tab_menu_top_padding">10dp</dimen>

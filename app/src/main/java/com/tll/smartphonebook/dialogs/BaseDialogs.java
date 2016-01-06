@@ -25,7 +25,7 @@ public class BaseDialogs {
                 .setPositiveButton(R.string.export, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                SharedPreferenceUtils.saveBoolean(activity, BaseConstants.IS_APP_STARTED_FIRST,true);
+                                SharedPreferenceUtils.saveBoolean(activity, BaseConstants.IS_APP_STARTED_FIRST, true);
                                 ContentResolver cr = activity.getContentResolver();
                                 Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
                                         null, null, null, null);
@@ -44,7 +44,11 @@ public class BaseDialogs {
                                                 String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                                                 String[] splitted = name.split(" ");
                                                 try {
-                                                    ((SmartPhoneApplication)activity.getApplication()).addContact(new Contact(splitted[0], splitted[1], "", "", phoneNo, ""));
+                                                    if (splitted.length == 1) {
+                                                        ((SmartPhoneApplication)activity.getApplication()).addContact(new Contact(splitted[0],"", "", "", phoneNo, ""));
+                                                    } else {
+                                                        ((SmartPhoneApplication) activity.getApplication()).addContact(new Contact(splitted[0], splitted[1], "", "", phoneNo, ""));
+                                                    }
                                                 } catch (Exception ex) {
                                                     ex.printStackTrace();
                                                 }
@@ -62,7 +66,7 @@ public class BaseDialogs {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     dialogInterface.dismiss();
-                                    SharedPreferenceUtils.saveBoolean(activity, BaseConstants.IS_APP_STARTED_FIRST,true);
+                                    SharedPreferenceUtils.saveBoolean(activity, BaseConstants.IS_APP_STARTED_FIRST, true);
                                 }
                             }
 

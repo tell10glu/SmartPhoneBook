@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/wood4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textColor="@color/main_text_color"
+                android:textSize="20sp"
+                android:text="@string/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:id="@+id/activity_add_new_contact_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:id="@+id/activity_add_new_contact_surname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/mobile_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:inputType="phone"
+                android:id="@+id/activity_add_new_contact_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/home_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:inputType="phone"
+                android:id="@+id/activity_add_new_contact_home_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/work_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:inputType="phone"
+                android:id="@+id/activity_add_new_contact_work_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:textColor="@android:color/white"
+                android:id="@+id/activity_add_new_contact_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:text="@string/home_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/activity_add_new_contact_add_home_location"
+                android:layout_width="match_parent"
+                android:textColor="@color/main_text_color"
+                android:text="@string/click_for_home_location"
+                android:background="@drawable/wood3"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/main_text_color"
+                android:textSize="20sp"
+                android:text="@string/work_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/activity_add_new_contact_add_work_location"
+                android:layout_width="match_parent"
+                android:textColor="@color/main_text_color"
+                android:text="@string/click_for_work_location"
+                android:background="@drawable/wood3"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:textSize="40sp"
+                android:id="@+id/activity_add_new_contact_add_button"
+                android:layout_width="match_parent"
+                android:textColor="@color/main_text_color"
+                android:text="@string/add"
+                android:background="@drawable/wood3"
+                android:layout_height="80dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,15 +1,19 @@
-package com.tll.smartphonebook;
+package com.tll.smartphonebook.activities;
 
 import android.app.Activity;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.tll.smartphonebook.R;
 import com.tll.smartphonebook.constants.BaseConstants;
 import com.tll.smartphonebook.dialogs.BaseDialogs;
 import com.tll.smartphonebook.fragments.CallFragment;
@@ -18,7 +22,9 @@ import com.tll.smartphonebook.fragments.HistoryCallsFragment;
 import com.tll.smartphonebook.helpers.SharedPreferenceUtils;
 
 public class MainActivity extends Activity implements View.OnClickListener {
-
+    //INTENT REQUESTS
+    public static final int ADD_CONTACT_REQUEST = 511;
+    //FRAGMENT TAGS
     private static final String CALL_FRAGMENT = "CALL_FRAGMENT";
     private static final String CONTACT_FRAGMENT = "CONTACT_FRAGMENT";
     private static final String CONTACT_HISTORY_FRAGMENT = "CONTACT_HISTORY_FRAGMENT";
@@ -92,6 +98,79 @@ public class MainActivity extends Activity implements View.OnClickListener {
         transaction.replace(R.id.main_activity_fragment_area, fragment, tag);
         transaction.addToBackStack(tag);
         transaction.commit();
+        createTab(tag);
+    }
+
+    private void createTab(String tag){
+
+        findViewById(R.id.main_activity_tab_text_area).setVisibility(View.GONE);
+        findViewById(R.id.main_activity_tab_1).setVisibility(View.GONE);
+        findViewById(R.id.main_activity_tab_2).setVisibility(View.GONE);
+        findViewById(R.id.main_activity_tab_3).setVisibility(View.GONE);
+        switch (tag){
+            case CALL_FRAGMENT:
+
+                break;
+            case CONTACT_FRAGMENT:
+                Button btnAddNewContact = (Button)findViewById(R.id.main_activity_tab_1);
+                btnAddNewContact.setText(getString(R.string.add));
+                btnAddNewContact.setVisibility(View.VISIBLE);
+                btnAddNewContact.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivityForResult(new Intent(MainActivity.this, AddNewContact.class), ADD_CONTACT_REQUEST);
+                    }
+                });
+                EditText txt = (EditText)findViewById(R.id.main_activity_tab_text_area);
+                txt.setVisibility(View.VISIBLE);
+                break;
+            case CONTACT_HISTORY_FRAGMENT:
+
+                break;
+            case SMS_FRAGMENT:
+                Button btnNewSms = (Button)findViewById(R.id.main_activity_tab_1);
+                btnNewSms.setText(getString(R.string.new_message));
+                btnNewSms.setVisibility(View.VISIBLE);
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        try {
+            getFragmentManager().popBackStack();
+            Fragment currentFragment = getFragmentManager().findFragmentById(R.id.main_activity_fragment_area);
+            View view = null;
+            switch (currentFragment.getTag()){
+                case CALL_FRAGMENT:
+                    view = findViewById(R.id.activity_main_tab_call);
+                    break;
+                case CONTACT_FRAGMENT:
+                    view = findViewById(R.id.activity_main_contacts);
+                    break;
+                case CONTACT_HISTORY_FRAGMENT:
+                    view = findViewById(R.id.activity_main_contact_history);
+                    break;
+                case SMS_FRAGMENT:
+                    view = findViewById(R.id.activity_main_contact_messages);
+                    break;
+            }
+            setTab(currentFragment.getTag(),view);
+        }catch (Exception ex){
+            ex.printStackTrace();
+
+        }
+
+    }
+    private void setTab(String fragmentTag,View view){
+        if (!fragmentTag.equals("") && !isFragmentVisible(fragmentTag)) {
+            setButtonDefaultColors();
+            view.setSelected(true);
+            ((Button)view).setTextColor(Color.BLACK);
+            addFragment(fragmentTag);
+        }
     }
     @Override
     public void onClick(View view) {
@@ -112,12 +191,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             default:
                 return;
         }
+        setTab(fragmentTag,view);
 
-        if (!fragmentTag.equals("") && !isFragmentVisible(fragmentTag)) {
-            setButtonDefaultColors();
-            view.setSelected(true);
-            ((Button)view).setTextColor(Color.BLACK);
-            addFragment(fragmentTag);
-        }
+
     }
 }

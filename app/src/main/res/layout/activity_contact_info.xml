@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/wood4"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="?android:listPreferredItemHeightLarge">
+            <ImageView
+                android:src="@drawable/wood3"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/contact_info_back"
+                android:background="@android:color/transparent"
+                android:textColor="@color/main_text_color"
+                android:text="@string/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/contact_info_modify"
+                android:text="@string/modify"
+                android:textColor="@color/main_text_color"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/contact_info_delete"
+                android:layout_toStartOf="@+id/contact_info_delete" />
+            <Button
+
+                android:text="@string/delete"
+                android:textColor="@color/main_text_color"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/contact_info_delete" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/contact_image_name"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+            <TextView
+                android:layout_centerVertical="true"
+                android:textSize="30sp"
+                android:layout_toRightOf="@id/contact_image_name"
+                android:textColor="@color/main_text_color"
+                android:text="Isim Soyisim"
+                android:id="@+id/contact_info_name_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textStyle="bold|italic"
+                android:background="@drawable/contact_info_tab_background"
+                android:padding="10dp"
+                android:text="@string/numbers"
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include android:id="@+id/contact_info_mobil_number" layout="@layout/row_contact_number"></include>
+                <include android:id="@+id/contact_info_home_number" layout="@layout/row_contact_number"></include>
+                <include android:id="@+id/contact_info_work_number" layout="@layout/row_contact_number"></include>
+
+            </LinearLayout>
+            <TextView
+
+                android:textStyle="bold|italic"
+                android:background="@drawable/contact_info_tab_background"
+                android:padding="10dp"
+                android:text="@string/locations"
+                android:textSize="20sp"
+                android:textColor="@color/main_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

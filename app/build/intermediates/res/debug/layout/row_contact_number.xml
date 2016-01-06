@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+
+    android:background="@drawable/row_only_stroke"
+    android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeight">
+    <ImageView
+        android:background="@drawable/wood3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:clickable="true"
+        android:focusable="true"
+
+        android:id="@+id/row_contact_number_relative_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:textColor="@color/main_text_color"
+            android:id="@+id/row_contact_number_number"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            android:textSize="20sp"
+            android:text="sdffdsafda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/imageButton2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:textColor="@color/main_text_color"
+            android:textStyle="bold|italic"
+            android:text="MOBIL"
+            android:paddingLeft="30dp"
+            android:id="@+id/row_contact_number_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_contact_number_number"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageButton
+            android:padding="3dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/viber_call"
+            android:scaleType="fitXY"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/imageButton2" />
+    </RelativeLayout>
+    <ImageButton
+        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:id="@+id/imageButton" />
+</RelativeLayout><!-- From: file:/Users/abdullahtellioglu/Desktop/SmartPhoneBook/app/src/main/res/layout/row_contact_number.xml -->
